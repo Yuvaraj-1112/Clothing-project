@@ -1,0 +1,75 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI';
+}
+
+/* Header Section */
+#header {
+    background-color: rgb(150, 210, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI';
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header img {
+    max-height: 50px;
+}
+
+/* Navbar */
+#navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    margin: 0 15px;
+    position: relative;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #ff0000;
+}
+
+#navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar a:hover::after {
+    width: 50%;
+}
+
+#navbar .active a {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#navbar .separator {
+    width: 1px;
+    height: 30px;
+    background-color: #000000;
+    margin: 0 10px;
+}

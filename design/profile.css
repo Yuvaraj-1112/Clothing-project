@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI';
+}
+
+/* Header Section */
+#header {
+    background-color: rgb(150, 210, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI';
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header img {
+    max-height: 50px;
+}
+
+/* Navbar */
+#navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    margin: 0 15px;
+    position: relative;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #ff0000;
+}
+
+#navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar a:hover::after {
+    width: 50%;
+}
+
+#navbar .active a {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#navbar .separator {
+    width: 1px;
+    height: 30px;
+    background-color: #000000;
+    margin: 0 10px;
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    
+    padding: 30px;
+   
+    border-radius: 15px;
+    background-image: url(img/bg/profilebg.jpg);
+   
+   
+}
+
+/* Profile Card & Edit Profile Card */
+.profile-card, .edit-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content inside */
+    justify-content: center;
+    background: linear-gradient(   #b8c6fe , #ffa5d8);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.7);
+    width: 350px;
+    max-width: 90%;
+    transition: 0.3s ease-in-out;
+}
+
+/* Buttons - Increased Size */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 14px 20px; /* Increased padding for bigger size */
+    font-size: 16px; /* Larger text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: red;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #007BFF;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}

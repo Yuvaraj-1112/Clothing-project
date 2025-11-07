@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI';
+}
+
+/* Header Section */
+#header {
+    background-color: rgb(150, 210, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI';
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header img {
+    max-height: 50px;
+}
+
+/* Navbar */
+#navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    margin: 0 15px;
+    position: relative;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #ff0000;
+}
+
+#navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar a:hover::after {
+    width: 50%;
+}
+
+#navbar .active a {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#navbar .separator {
+    width: 1px;
+    height: 30px;
+    background-color: #000000;
+    margin: 0 10px;
+}
+
+/*Cart page*/
+#cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.cart-footer {
+    text-align: right;
+    font-size: 18px;
+}
+
+#checkout-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #ccc;
+}
+

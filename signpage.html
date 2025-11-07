@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuv Clothing</title>
+    <link rel="stylesheet" href="design/logsign.css">
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            const form = document.getElementById("myForm");
+            const inputs = form.querySelectorAll("input[required]");
+            let allFilled = true;
+
+            inputs.forEach(input => {
+                if (!input.value) {
+                    allFilled = false;
+                    input.style.borderColor = "red";
+                } else {
+                    input.style.borderColor = "green";
+                }
+            });
+
+            const genderInputs = document.querySelectorAll('input[name="Gender"]');
+            let genderSelected = "";
+            genderInputs.forEach(input => {
+                if (input.checked) {
+                    genderSelected = input.value;
+                }
+            });
+
+            if (!genderSelected) {
+                alert("Please select a gender.");
+                return;
+            }
+
+            const mobileNo = document.querySelector('input[name="mobileNo1"]');
+            if (!/^\d{10}$/.test(mobileNo.value)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                mobileNo.style.borderColor = "red";
+                return;
+            }
+
+            const pincode = document.querySelector('input[name="Pin1"]');
+            if (!/^\d{6}$/.test(pincode.value)) {
+                alert("Please enter a valid 6-digit Pincode.");
+                pincode.style.borderColor = "red";
+                return;
+            }
+
+            if (allFilled && genderSelected) {
+                const userData = {
+                    name: document.querySelector('input[name="name1"]').value,
+                    mobile: mobileNo.value,
+                    dob: document.querySelector('input[name="dob1"]').value,
+                    gender: genderSelected,
+                    address: document.querySelector('input[name="address1"]').value,
+                    location: document.querySelector('input[name="location1"]').value,
+                    city: document.querySelector('input[name="city1"]').value,
+                    pincode: pincode.value
+                };
+
+                localStorage.setItem("userProfile", JSON.stringify(userData));
+
+                window.location.href = "createpass.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="bg">
+        <div class="box">
+            <h2>You're new here</h2>
+            <hr>
+            <form id="myForm" action="" method="post" onsubmit="validateForm(event)">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name1" placeholder="Enter the name" required>
+                </div>
+                <div>
+                    <label for="mobileNo">Mobile No:</label>
+                    <input type="tel" name="mobileNo1" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" placeholder="Enter mobile number" required>
+                </div>
+                <div>
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" name="dob1" required>
+                </div>
+                <div>
+                    <label for="Gender">Gender:</label>
+                    <label><input type="radio" name="Gender" value="Male"> Male</label>
+                    <label><input type="radio" name="Gender" value="Female"> Female</label>
+                    <label><input type="radio" name="Gender" value="Others"> Others</label>
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" name="address1" placeholder="Enter the address" required>
+                </div>
+                <div>
+                    <label for="location">Location:</label>
+                    <input type="text" name="location1" placeholder="Enter the location" required>
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" name="city1" placeholder="Enter city name" required>
+                </div>
+                <div>
+                    <label for="pin">Pincode:</label>
+                    <input type="number" name="Pin1" placeholder="Enter the Pincode" required>
+                </div>
+                <div class="but">
+                    <button class="big" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
