@@ -74,6 +74,7 @@ body {
     margin: 0 10px;
 }
 
+/* banner Section */
 .banner {
     display: flex;
     flex-direction: column;
@@ -100,7 +101,7 @@ body {
     justify-content: space-between;
     gap: 30px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1300px;
   }
   
   .banner-item img {
@@ -115,7 +116,7 @@ body {
   }
 
   #hmb01 {
-    width: 600px;
+    width: 650px;
     height: 45vh;
     object-fit: cover;
     margin-left: -70px;
@@ -155,3 +156,12 @@ body {
     height: 110vh;
     background-color: rgb(184, 255, 255);
   }
+
+  /* footer ssection */
+
+  .logo{
+    margin-left: -50px;
+}
+a{
+    margin-bottom: 8px;
+}
