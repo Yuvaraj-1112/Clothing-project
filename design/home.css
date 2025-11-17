@@ -16,11 +16,13 @@ body {
     position: sticky;
     top: 0;
     left: 0;
+    max-height: 40px;
 }
 
 
 #header img {
-    max-height: 50px;
+    margin-top: 10px;
+    max-height: 40px;
 }
 
 #navbar {

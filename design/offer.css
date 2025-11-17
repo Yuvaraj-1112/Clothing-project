@@ -73,3 +73,85 @@ body {
     background-color: #000000;
     margin: 0 10px;
 }
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .banner h2 {
+    margin-top: -12px;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 35px;
+  }
+  .banner p{
+    margin-top: -35px;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 17px;
+}
+  
+  .banner-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .banner-item img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: auto;
+  }
+  
+  .banner-item img:hover {
+    transform: scale(1.05);
+  }
+
+  #hmb01 {
+    width: 600px;
+    height: 45vh;
+    object-fit: cover;
+    margin-left: -70px;
+  }
+  
+  .banner-item img:nth-child(2) {
+    width: 650px;
+    object-fit: cover;
+    margin-right: 100px;
+  }
+
+  .banner2{
+    display: flex;
+    justify-content:center;
+    width: 70%;
+    height: 40vh;
+    margin-left: 200px;
+  }
+  
+  .banner2 img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: auto;
+  }
+  
+  .banner2 img:hover {
+    transform: scale(1.05);
+  }
+  .ban-bg{
+    border-radius: 10px;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 110vh;
+    background-color: rgb(184, 255, 255);
+  }
