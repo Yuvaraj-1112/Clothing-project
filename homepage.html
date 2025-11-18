@@ -30,6 +30,28 @@
         </div>
     </section>
 
+   <div class="hamburger" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+    <ul class="sidebar-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="shoppage.html">Shop</a></li>
+        <li><a href="offerpage.html">Offers</a></li>
+        <li><a href="cartpage.html">Cart</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
     <section id="main-pro">
     <section id="product">
         <h2>New arrivals</h2>
@@ -440,6 +462,18 @@
             });
         });
     </script>
+
+    <script>
+    function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+
+    // Prevent body scroll when sidebar is open
+    document.body.classList.toggle("no-scroll");
+}
+</script>
+
+
 
 </body>
 
