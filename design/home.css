@@ -339,11 +339,6 @@ footer a {
         height: auto;
     }
 
-    /* Footer */
-    footer {
-        padding: 15px;
-    }
-
     /* Show bottom nav */
     .bottom-nav {
         display: flex;
