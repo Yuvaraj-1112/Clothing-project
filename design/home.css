@@ -389,7 +389,7 @@ footer a {
     .hamburger {
         display: block;
         position: fixed;
-        top: 12px;
+        top: 17px;
         right: 15px; /* moved from left to right */
         font-size: 28px;
         z-index: 9999;
@@ -402,8 +402,8 @@ footer a {
         display: block;
         position: fixed;
         top: 0;
-        right: -260px; /* hidden by default */
-        width: 260px;
+        right: -300px; /* hidden by default */
+        width: 200px;
         height: 100%;
         background: rgb(150, 210, 255); /* SAME as navbar */
         padding: 20px;
