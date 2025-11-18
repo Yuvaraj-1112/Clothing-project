@@ -314,8 +314,9 @@ footer a {
 
     /* Product grid 2 per row */
     .pro {
-        width: 46%;
+        width: 40%;
         padding: 10px;
+        height: 95%;
     }
 
     /* Banner */
@@ -347,5 +348,27 @@ footer a {
     .bottom-nav {
         display: flex;
         justify-content: center;
+    }
+}
+
+
+/* ==========================
+   FOOTER STYLES
+   ========================== */
+
+/* SHOW ONLY COPYRIGHT ON MOBILE */
+@media (max-width: 480px) {
+
+    /* Hide all footer sections except copyright */
+    footer > div:first-of-type {
+        display: none !important;
+    }
+
+    /* Copyright section style */
+    footer > div:last-of-type {
+        display: block !important;
+        text-align: center;
+        margin-top: 10px !important;
+        padding: 10px 0;
     }
 }
