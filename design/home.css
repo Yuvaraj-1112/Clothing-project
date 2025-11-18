@@ -3,7 +3,6 @@ body {
     font-family: 'Segoe UI';
 }
 
-
 /* Header Section */
 #header {
     background-color: rgb(150, 210, 255);
@@ -12,14 +11,79 @@ body {
     align-items: center;
     padding: 10px 20px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-    font-family: 'Segoe UI';
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 2000;
     max-height: 40px;
 }
 
+/* =============== HAMBURGER BUTTON (MOBILE) =============== */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
 
+/* Sidebar Styling */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -270px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    z-index: 3000;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+}
+
+.mobile-sidebar.open {
+    left: 0;
+}
+
+.mobile-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-sidebar li {
+    margin: 15px 0;
+}
+
+.mobile-sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    display: block;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    z-index: 2500;
+}
+
+.overlay.show {
+    display: block;
+}
+
+
+/* Navbar */
 #header img {
     margin-top: 10px;
     max-height: 40px;
@@ -30,7 +94,6 @@ body {
     display: flex;
     align-items: center;
     padding: 0;
-    margin: 0;
 }
 
 #navbar li {
@@ -40,10 +103,9 @@ body {
 
 #navbar a {
     text-decoration: none;
-    color: #000000;
+    color: #000;
     font-size: 16px;
     transition: color 0.3s ease;
-    position: relative;
 }
 
 #navbar a:hover {
@@ -73,26 +135,22 @@ body {
 #navbar .separator {
     width: 1px;
     height: 30px;
-    background-color: #000000;
-    margin: 0 10px;
+    background-color: #000;
 }
 
 /* Product Section */
 #main-pro{
     background-color: rgb(197, 255, 236);
     margin-bottom: 10px;
-    height: auto;
 }
 h2 {
     text-align: center;
-    font-family: 'Segoe UI';
     font-size: 35px;
 }
 
 .topic {
     margin-top: -18px;
     text-align: center;
-    font-family: 'Segoe UI';
     font-size: 17px;
 }
 
@@ -103,6 +161,7 @@ h2 {
     flex-wrap: wrap;
     margin-left: 5px;
 }
+
 .pro {
     background-color: #fff7f7;
     border: 1px solid #ddd;
@@ -114,16 +173,12 @@ h2 {
 }
 
 .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.4);
 }
 
 .pro img {
     width: 100%;
     border-radius: 8px;
-}
-
-.des {
-    position: relative;
 }
 
 .des span {
@@ -138,126 +193,74 @@ h2 {
 
 .star {
     color: #f8b400;
-    margin-top: -5px;
 }
 
 .price-cart {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
 }
 
 .price-cart h4 {
     color: #008b3c;
-    font-weight: bold;
-    margin: 0;
-    margin-top: -5px;
 }
 
 .price-cart a {
     color: #fe9292;
-    text-decoration: none;
     font-size: 18px;
-    margin-top: -5px;
 }
 
-/* banner Section */
+/* Banner */
 .banner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .banner h2 {
-    margin-top: -12px;
-    text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 35px;
-  }
-  .banner p{
-    margin-top: -35px;
-    text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 17px;
 }
-  
-  .banner-images {
+
+.banner-images {
     display: flex;
     justify-content: space-between;
     gap: 30px;
     width: 100%;
-    max-width: 1300px;
-  }
-  
-  .banner-item img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: auto;
-  }
-  
-  .banner-item img:hover {
-    transform: scale(1.05);
-  }
+}
 
-  #hmb01 {
+.banner-item img {
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.banner-item img:hover {
+    transform: scale(1.05);
+}
+
+#hmb01 {
     width: 650px;
     height: 45vh;
     object-fit: cover;
-    margin-left: -70px;
-  }
-  
-  .banner-item img:nth-child(2) {
-    width: 650px;
-    object-fit: cover;
-    margin-right: 100px;
-  }
-
-  .banner2{
-    display: flex;
-    justify-content:center;
-    width: 70%;
-    height: 40vh;
-    margin-left: 200px;
-  }
-  
-  .banner2 img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: auto;
-  }
-  
-  .banner2 img:hover {
-    transform: scale(1.05);
-  }
-  .ban-bg{
-    border-radius: 10px;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
-    margin-top: 40px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 110vh;
-    background-color: rgb(184, 255, 255);
-  }
-
-  /* footer ssection */
-
-  .logo{
-    margin-left: -50px;
 }
-a{
+
+.banner2 img {
+    border-radius: 10px;
+}
+
+/* Banner BG */
+.ban-bg {
+    border-radius: 10px;
+    box-shadow: 0 5px 9px rgba(0,0,0,0.5);
+    background-color: rgb(184,255,255);
+    margin: 40px 10px;
+    padding-bottom: 20px;
+}
+
+/* Footer */
+footer a {
     margin-bottom: 8px;
 }
 
-/* Smooth image loading */
+/* Lazy Image Fade-In */
 .lazy-img {
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transition: 0.8s;
 }
 
 .lazy-img[data-loaded="true"] {
@@ -266,125 +269,83 @@ a{
 
 
 /* ===========================
-   MOBILE RESPONSIVE DESIGN
-   =========================== */
+   BOTTOM FLOATING NAV (Mobile)
+=============================== */
+.bottom-nav {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 5000;
+    gap: 20px;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}
+
+.bottom-nav .icon {
+    font-size: 20px;
+}
+
+
+/* ===========================
+      MOBILE VIEW
+=========================== */
 @media (max-width: 480px) {
 
-    /* Header */
-    #header {
-        padding: 8px 12px;
-        height: auto;
-        max-height: none;
+    /* Show hamburger */
+    .hamburger-btn {
+        display: block;
     }
 
-    #header img {
-        max-height: 35px;
-        margin-top: 0;
-    }
-
+    /* Hide desktop navbar */
     #navbar {
-        gap: 10px;
-        font-size: 14px;
+        display: none;
     }
 
-    #navbar li {
-        margin: 0 6px;
-    }
-
-    #navbar .separator {
-        height: 20px;
-    }
-
-    /* Product Section */
-    h2 {
-        font-size: 26px;
-    }
-
-    .topic {
-        font-size: 15px;
-        margin-top: -10px;
-    }
-
-    .pro-bg {
-        justify-content: center;
-        gap: 12px;
-        margin: 0;
-        padding: 0 10px;
-    }
-
+    /* Product grid 2 per row */
     .pro {
         width: 46%;
         padding: 10px;
-        border-radius: 10px;
     }
 
-    .pro img {
-        border-radius: 10px;
-    }
-
-    .des h5 {
-        font-size: 14px;
-    }
-
-    .price-cart h4 {
-        font-size: 16px;
-    }
-
-    /* Banner Section */
+    /* Banner */
     .banner-images {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
-        padding: 0 10px;
     }
 
     #hmb01,
     .banner-item img {
-        width: 400%;
-        height: auto;
-        margin: 0;
-    }
-
-    .banner2 {
         width: 100%;
-        height: auto;
         margin: 0;
-        padding: 0 10px;
     }
 
     .banner2 img {
         width: 100%;
-        height: auto;
     }
 
     .ban-bg {
         height: auto;
-        padding-bottom: 20px;
     }
 
     /* Footer */
     footer {
-        text-align: justify;
-        padding: 20px 10px;
+        padding: 15px;
     }
 
-    footer div {
-        flex-direction: column;
-        margin-left: 0 !important;
-    }
-
-    footer img {
-        width: 120px !important;
-        height: auto !important;
-        margin-left: 0 !important;
-    }
-
-    footer a {
-        margin-bottom: 5px;
-        font-size: 14px;
-    }
-
-    footer h3 {
-        margin-top: 20px;
+    /* Show bottom nav */
+    .bottom-nav {
+        display: flex;
+        justify-content: center;
     }
 }
