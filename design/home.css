@@ -314,7 +314,7 @@ footer a {
 
     /* Product grid 2 per row */
     .pro {
-        width: 40%;
+        width: 42%;
         padding: 10px;
         height: 95%;
     }
@@ -369,6 +369,6 @@ footer a {
         display: block !important;
         text-align: center;
         margin-top: 10px !important;
-        padding: 10px 0;
+
     }
 }
