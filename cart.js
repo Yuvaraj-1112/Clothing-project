@@ -12,15 +12,50 @@ document.addEventListener("DOMContentLoaded", () => {
             cartItem.classList.add("cart-item");
 
             cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <span>${item.name} (Size: ${item.size}) - ₹${item.price} x </span>
+                <img style="width: 100px; height: 100px; border: none; border-radius 5px;" src="${item.image}" alt="${item.name}">
+                 <div style="flex:1;
+                             margin-left: 100px;">
+
+                        <span style="font-size:20px; font-weight:500;">
+                            ${item.name} 
+                        </span>
+                        <br>
+                        <span style="font-size:17px; color:#555;">
+                            ₹${item.price}
+                        </span>
+                    </div>
+                     
+                    <div style="flex: 1; margin-right:200px; margin-left: 50px; margin-bottom: 15px;">
+                    <span style="font-size:20px; font-weight:500;">
+                         Size: ${item.size}
+                        </span>
+                        </div>
+
                 <div class="quantity-controls">
-                    <button class="quantity-btn" data-index="${index}" data-action="decrease">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="quantity-btn" data-index="${index}" data-action="increase">+</button>
+                    <button class="quantity-btn" data-index="${index}" data-action="decrease"
+                            style="padding:6px 10px; font-size:18px; border:none;
+                                   background:#ddd; border-radius:4px; cursor:pointer;">
+                            -
+                        </button>
+
+                        <span style="font-size:16px; min-width:20px; text-align:center;">
+                            ${item.quantity}
+                        </span>
+
+                        <button class="quantity-btn" data-index="${index}" data-action="increase"
+                            style="padding:6px 10px; font-size:18px; border:none;
+                                   background:#ddd; border-radius:4px; cursor:pointer;">
+                            +
+                        </button>
                 </div>
-                <button class="remove-btn" data-index="${index}">Remove</button>
-            `;
+                <button class="remove-btn" style="background-color: red;
+                                                  color: white;   
+                                                  padding: 8px 12px; 
+                                                  cursor: pointer; 
+                                                  border: none;
+                                                  border-radius:5px;
+                                                  margin-left: 400px;" 
+                                                  data-index="${index}">Remove</button> `;
 
             cartItemsContainer.appendChild(cartItem);
             total += item.price * item.quantity;
