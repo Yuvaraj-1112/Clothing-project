@@ -1,0 +1,107 @@
+body{
+    font-family:'Segoe UI';
+}
+
+/* Desktop */
+.bodyy{
+    display: flex;
+    background-image: url(img/bg/clothing2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+button{
+    background-image: url(img/button/marbut.png); 
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    font-style: oblique;
+    font-family: 'Segoe UI';
+    color: rgb(180, 173, 40);
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 80px;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 60vh;
+    margin-left: 200px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+button:hover {
+    opacity: 1; 
+}
+
+.logo{
+    margin-left: -50px;
+}
+
+a{
+    margin-bottom: 8px;
+}
+
+
+/* --------------------------- */
+/*  Mobile Optimization CSS  */
+/* --------------------------- */
+
+@media(max-width: 480px){
+
+   @media(max-width: 480px){
+    .bodyy{
+        display: flex;
+        flex-direction: column;
+        background-image: url(img/bg/mbg1.avif);
+
+        /* FIX: Make image fill 100% of screen */
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        /* Ensures full screen height */
+        min-height: 100vh; 
+        width: 100vw;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    button{
+
+        width: 160px;
+        height: 60px;
+        margin-top: 60vh;
+        margin: 0;
+        font-size: 18px;
+        opacity: 0.9;
+    }
+}
+
+
+    .logo{
+        margin-left: 0;             /* fix logo shift */
+        width: 150px;               /* smaller logo */
+    }
+
+    a{
+        margin-bottom: 6px;
+        font-size: 16px;
+    }
+
+     footer > div:first-of-type {
+        display: none !important;
+    }
+
+    /* Copyright section style */
+    footer > div:last-of-type {
+        display: block !important;
+        text-align: center;
+        margin-top: 10px !important;
+
+    }
+}
+
