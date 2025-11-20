@@ -5,7 +5,7 @@ body{
 /* Desktop */
 .bodyy{
     display: flex;
-    background-image: url(img/bg/clothing2.jpg);
+    background-image: url(img/bg/clothing2.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,7 +55,7 @@ a{
     .bodyy{
         display: flex;
         flex-direction: column;
-        background-image: url(img/bg/mbg1.avif);
+        background-image: url(img/bg/mbg2.avif);
 
         /* FIX: Make image fill 100% of screen */
         background-size: 100% 100%;
