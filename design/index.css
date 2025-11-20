@@ -60,7 +60,7 @@ a{
         /* FIX: Make image fill 100% of screen */
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: fixed;
 
         /* Ensures full screen height */
         min-height: 100vh; 
@@ -72,25 +72,14 @@ a{
 
     button{
 
-        width: 160px;
-        height: 60px;
-        margin-top: 60vh;
-        margin: 0;
-        font-size: 18px;
+        width: 150px;
+        height: 50px;
+        margin-top: 250px;
+        margin-right: 250px;
+        font-size: 16px;
         opacity: 0.9;
     }
 }
-
-
-    .logo{
-        margin-left: 0;             /* fix logo shift */
-        width: 150px;               /* smaller logo */
-    }
-
-    a{
-        margin-bottom: 6px;
-        font-size: 16px;
-    }
 
      footer > div:first-of-type {
         display: none !important;
