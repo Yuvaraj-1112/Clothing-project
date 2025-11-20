@@ -60,7 +60,7 @@ a{
         /* FIX: Make image fill 100% of screen */
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-position: fixed;
+        background-position: center center;
 
         /* Ensures full screen height */
         min-height: 100vh; 
