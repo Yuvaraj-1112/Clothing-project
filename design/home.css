@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI';
     overflow-x: hidden;
 }
 
@@ -20,11 +20,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px;
+    padding: 10px 15px;
+    
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
     z-index: 2000;
+    margin-bottom: 20px;
 }
 
 #header img {
@@ -36,7 +38,7 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 30px;
 }
 
 #navbar li {
@@ -85,8 +87,8 @@ body {
    PRODUCTS SECTION
 =========================== */
 #main-pro {
-    background-color: rgb(197, 255, 236);
-    padding: 20px 10px;
+    background-color: rgb(197, 255, 236); 
+    padding: 5px, 15px;  
 }
 
 h2 {
@@ -97,13 +99,13 @@ h2 {
 .topic {
     text-align: center;
     font-size: clamp(14px, 2vw, 18px);
-    margin-top: -5px;
+    margin-top: px;
 }
 
 /* PRODUCTS (Responsive GRID) */
 .pro-bg {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     gap: 15px;
     padding: 10px;
 }
@@ -157,43 +159,6 @@ h2 {
 }
 
 /* ===========================
-   BANNER RESPONSIVE
-=========================== */
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.banner-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    width: 100%;
-}
-
-.banner-item img {
-    width: 100%;
-    max-width: 700px;
-    height: clamp(200px, 45vh, 350px);
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-.banner-item img:hover {
-    transform: scale(1.05);
-}
-
-.ban-bg {
-    border-radius: 10px;
-    box-shadow: 0 5px 9px rgba(0,0,0,0.5);
-    background-color: rgb(184,255,255);
-    margin: 35px 10px;
-    padding-bottom: 15px;
-}
-
-/* ===========================
    LAZY IMAGE FADE-IN
 =========================== */
 .lazy-img {
@@ -212,37 +177,110 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    #navbar { display: none; }
+     /* Hide Desktop Navbar */
+    #navbar {
+        display: none !important;
+    }
 
+    /* Show Hamburger */
     .hamburger {
         display: block;
         position: fixed;
-        top: 13px;
-        right: 10px;
+        top: 17px;
+        right: 15px;
         font-size: 28px;
         cursor: pointer;
-        z-index: 9999;
         color: #000;
+        z-index: 9999;
     }
 
+    /* Sidebar Panel */
     .sidebar {
         display: block;
         position: fixed;
         top: 0;
-        right: -260px;
-        width: 240px;
+        right: -300px;
+        width: 200px;
         height: 100%;
         background: rgb(150, 210, 255);
         padding: 20px;
-        transition: all 0.35s ease;
-        z-index: 9998;
+        transition: right 0.35s ease;
         box-shadow: -3px 0 6px rgba(0,0,0,0.3);
+        z-index: 9998;
     }
 
     .sidebar.active {
         right: 0;
     }
 
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* Sidebar Close Button + Header */
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Sidebar Links */
+    .sidebar-links {
+        list-style: none;
+        margin-top: 25px;
+        padding: 0;
+    }
+
+    .sidebar-links li {
+        margin: 15px 0;
+    }
+
+    .sidebar-links a {
+        display: block;
+        font-size: 18px;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 5px;
+        position: relative;
+        font-family: 'Segoe UI';
+    }
+
+    /* Hover */
+    .sidebar-links a:hover {
+        color: #ff0000;
+    }
+
+    /* Underline Hover Effect */
+    .sidebar-links a::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: #ff0000;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar-links a:hover::after {
+        width: 50%;
+    }
+
+    /* Active Link */
+    .sidebar-links .active a {
+        color: #ff0000;
+        font-weight: bold;
+    }
+
+    /* Dark Overlay */
     .overlay {
         display: none;
         position: fixed;
@@ -254,7 +292,18 @@ h2 {
         z-index: 9997;
     }
 
-    .overlay.active { display: block; }
+    .overlay.active {
+        display: block;
+    }
+
+    footer > div:first-of-type {
+        display: none !important;
+    }
+    footer > div:last-of-type {
+        display: block !important;
+        text-align: center;
+        margin-top: 10px !important;
+    }
 }
 
 /* ===========================
@@ -264,3 +313,5 @@ h2 {
     .pro img { height: 140px; }
     h2 { font-size: 24px; }
 }
+
+
