@@ -81,14 +81,6 @@ button:hover {
         left: 50%;
 
     }
-    footer > div:first-of-type {
-        display: none !important;
-    }
-    footer > div:last-of-type {
-        display: block !important;
-        text-align: center;
-        margin-top: 10px !important;
-    }
 }
 
 @media (max-width: 430px) {
@@ -108,5 +100,145 @@ button:hover {
         height: 45px;
         font-size: 13px;
         bottom: 5vh;
+    }
+}
+
+
+/* ========================
+      FOOTER MAIN STYLE
+========================= */
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+/* FOOTER CONTAINER */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* LEFT CONTENT (LOGO + CONTACT) */
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+footer img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* MIDDLE COLUMNS (ABOUT + POLICY) */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 8vh;
+    margin-left: 200px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ff0000;
+}
+
+/* FOLLOW US SECTION */
+.footer-social {
+    flex: 1;
+    margin-left: 120px;
+    margin-top: 8vh;
+    text-align: center;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+#facebook { color: #3b5998; }
+#instagram { color: #E1306C; }
+#x { color: black; }
+#youtube { color: #FF0000; }
+
+/* COPYRIGHT */
+.footer-copy {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+/* ============================
+      RESPONSIVE FOOTER
+============================== */
+
+/* TABLET VIEW */
+@media (max-width: 992px) {
+    .footer-column {
+        margin-left: 100px;
+    }
+
+    .footer-social {
+        margin-left: 50px;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   SHOW ONLY LINKS + SOCIAL ICONS IN MOBILE
+============================================ */
+@media (max-width: 600px) {
+
+    /* HIDE Logo & Contact Section */
+    .footer-logo-section {
+        display: none !important;
+    }
+
+    /* KEEP ONLY LINKS + SOCIAL */
+    .footer-column {
+        display: none !important;
+    }
+
+    /* SOCIAL ICON CENTER FIX */
+    .footer-social {
+        margin-left: 0 !important;
+        margin-top: 3vh;
+        text-align: center !important;
+    }
+
+    /* SMALLER SPACING FOR MOBILE */
+    .footer-copy {
+        margin-top: 7vh;
+    }
+
+    /* MAKE A CLEAN GRID LOOK */
+    .footer-container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    footer a {
+        font-size: 15px;
     }
 }
