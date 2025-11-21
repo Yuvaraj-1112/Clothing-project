@@ -194,7 +194,7 @@ footer img {
 /* TABLET VIEW */
 @media (max-width: 992px) {
     .footer-column {
-        margin-left: 100px;
+        margin-left: 50px;
     }
 
     .footer-social {
@@ -221,13 +221,13 @@ footer img {
     /* SOCIAL ICON CENTER FIX */
     .footer-social {
         margin-left: 0 !important;
-        margin-top: 3vh;
         text-align: center !important;
+        margin-top: -3vh;
     }
 
     /* SMALLER SPACING FOR MOBILE */
     .footer-copy {
-        margin-top: 7vh;
+        margin-top: 5vh;
     }
 
     /* MAKE A CLEAN GRID LOOK */
@@ -235,7 +235,7 @@ footer img {
         justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 10px;
+       
     }
 
     footer a {
