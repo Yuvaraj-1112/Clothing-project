@@ -1,111 +1,54 @@
-/* General Styles */
-body {
-    font-family: 'Segoe UI';
+/* ===========================
+   GLOBAL RESET + FONT
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Section */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER & NAVBAR (Desktop)
+=========================== */
 #header {
     background-color: rgb(150, 210, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
-    left: 0;
     z-index: 2000;
-    max-height: 40px;
 }
 
-/* =============== HAMBURGER BUTTON (MOBILE) =============== */
-.hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-/* Sidebar Styling */
-.mobile-sidebar {
-    position: fixed;
-    top: 0;
-    left: -270px;
-    width: 250px;
-    height: 100%;
-    background: #fff;
-    z-index: 3000;
-    padding: 20px;
-    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
-    transition: left 0.3s ease;
-}
-
-.mobile-sidebar.open {
-    left: 0;
-}
-
-.mobile-sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.mobile-sidebar li {
-    margin: 15px 0;
-}
-
-.mobile-sidebar a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    display: block;
-}
-
-.close-sidebar {
-    background: none;
-    border: none;
-    font-size: 24px;
-    text-align: right;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    display: none;
-    z-index: 2500;
-}
-
-.overlay.show {
-    display: block;
-}
-
-
-/* Navbar */
 #header img {
-    margin-top: 10px;
-    max-height: 40px;
+    height: 40px;
 }
 
+/* Navbar Desktop */
 #navbar {
     list-style: none;
     display: flex;
     align-items: center;
-    padding: 0;
+    gap: 18px;
 }
 
 #navbar li {
-    margin: 0 15px;
     position: relative;
 }
 
 #navbar a {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 17px);
     transition: color 0.3s ease;
+    padding: 2px 2px;
 }
 
 #navbar a:hover {
@@ -118,9 +61,9 @@ body {
     height: 2px;
     background-color: #ff0000;
     position: absolute;
-    bottom: -4px;
+    bottom: -3px;
     left: 0;
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 #navbar a:hover::after {
@@ -138,52 +81,55 @@ body {
     background-color: #000;
 }
 
-/* Product Section */
-#main-pro{
+/* ===========================
+   PRODUCTS SECTION
+=========================== */
+#main-pro {
     background-color: rgb(197, 255, 236);
-    margin-bottom: 10px;
+    padding: 20px 10px;
 }
+
 h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: clamp(26px, 4vw, 35px);
 }
 
 .topic {
-    margin-top: -18px;
     text-align: center;
-    font-size: 17px;
+    font-size: clamp(14px, 2vw, 18px);
+    margin-top: -5px;
 }
 
+/* PRODUCTS (Responsive GRID) */
 .pro-bg {
-    display: flex;
-    gap: 20px;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin-left: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
 }
 
 .pro {
     background-color: #fff7f7;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
-    max-width: 200px;
-    text-align: left;
-    transition: 0.2s ease;
+    padding: 10px;
+    transition: 0.3s;
 }
 
 .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.4);
+    box-shadow: 12px 12px 20px rgba(0,0,0,0.35);
 }
 
 .pro img {
     width: 100%;
+    height: clamp(150px, 30vh, 200px);
+    object-fit: cover;
     border-radius: 8px;
 }
 
 .des span {
-    font-size: 14px;
     color: #555;
+    font-size: 14px;
 }
 
 .des h5 {
@@ -210,7 +156,9 @@ h2 {
     font-size: 18px;
 }
 
-/* Banner */
+/* ===========================
+   BANNER RESPONSIVE
+=========================== */
 .banner {
     display: flex;
     flex-direction: column;
@@ -219,267 +167,82 @@ h2 {
 
 .banner-images {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
     width: 100%;
 }
 
 .banner-item img {
+    width: 100%;
+    max-width: 700px;
+    height: clamp(200px, 45vh, 350px);
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s;
 }
-
 .banner-item img:hover {
     transform: scale(1.05);
 }
 
-#hmb01 {
-    width: 650px;
-    height: 45vh;
-    object-fit: cover;
-}
-
-.banner2 img {
-    border-radius: 10px;
-}
-
-/* Banner BG */
 .ban-bg {
     border-radius: 10px;
     box-shadow: 0 5px 9px rgba(0,0,0,0.5);
     background-color: rgb(184,255,255);
-    margin: 40px 10px;
-    padding-bottom: 20px;
+    margin: 35px 10px;
+    padding-bottom: 15px;
 }
 
-/* Footer */
-footer a {
-    margin-bottom: 8px;
-}
-
-/* Lazy Image Fade-In */
+/* ===========================
+   LAZY IMAGE FADE-IN
+=========================== */
 .lazy-img {
     opacity: 0;
-    transition: 0.8s;
+    transition: 0.9s;
 }
-
 .lazy-img[data-loaded="true"] {
     opacity: 1;
 }
 
-
 /* ===========================
-   BOTTOM FLOATING NAV (Mobile)
-=============================== */
-.bottom-nav {
-    position: fixed;
-    bottom: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    padding: 10px 20px;
-    border-radius: 40px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    display: none;
-    z-index: 5000;
-    gap: 20px;
-}
-
-.bottom-nav a {
-    text-decoration: none;
-    text-align: center;
-    font-size: 12px;
-    color: black;
-}
-
-.bottom-nav .icon {
-    font-size: 20px;
-}
-
-
-/* ===========================
-      MOBILE VIEW
+   SIDEBAR + HAMBURGER (MOBILE)
 =========================== */
-@media (max-width: 480px) {
-
-    /* Show hamburger */
-    .hamburger-btn {
-        display: block;
-    }
-
-    /* Hide desktop navbar */
-    #navbar {
-        display: none;
-    }
-
-    /* Product grid 2 per row */
-    .pro {
-        width: 42%;
-        padding: 10px;
-        height: 95%;
-    }
-
-    /* Banner */
-    .banner-images {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #hmb01,
-    .banner-item img {
-        width: 100%;
-        margin: 0;
-    }
-
-    .banner2 img {
-        width: 100%;
-    }
-
-    .ban-bg {
-        height: auto;
-    }
-
-    /* Show bottom nav */
-    .bottom-nav {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-
-/* ==========================
-   FOOTER STYLES
-   ========================== */
-
-/* SHOW ONLY COPYRIGHT ON MOBILE */
-@media (max-width: 480px) {
-
-    /* Hide all footer sections except copyright */
-    footer > div:first-of-type {
-        display: none !important;
-    }
-
-    /* Copyright section style */
-    footer > div:last-of-type {
-        display: block !important;
-        text-align: center;
-        margin-top: 10px !important;
-
-    }
-}
-
-/* HIDE SIDEBAR & HAMBURGER ON DESKTOP */
-.hamburger,
-.sidebar,
-.overlay {
+.hamburger, .sidebar, .overlay {
     display: none;
 }
 
-/* ============================
-   SIDEBAR MENU — MOBILE ONLY
-============================ */   
 @media (max-width: 768px) {
+    #navbar { display: none; }
 
-    /* Hide desktop navbar */
-    #navbar {
-        display: none !important;
-    }
-
-    /* Show hamburger */
     .hamburger {
         display: block;
         position: fixed;
-        top: 17px;
-        right: 15px; /* moved from left to right */
+        top: 13px;
+        right: 10px;
         font-size: 28px;
-        z-index: 9999;
         cursor: pointer;
+        z-index: 9999;
         color: #000;
     }
 
-    /* Sidebar slides from RIGHT */
     .sidebar {
         display: block;
         position: fixed;
         top: 0;
-        right: -300px; /* hidden by default */
-        width: 200px;
+        right: -260px;
+        width: 240px;
         height: 100%;
-        background: rgb(150, 210, 255); /* SAME as navbar */
+        background: rgb(150, 210, 255);
         padding: 20px;
-        transition: right 0.35s ease;
+        transition: all 0.35s ease;
         z-index: 9998;
         box-shadow: -3px 0 6px rgba(0,0,0,0.3);
     }
 
-    /* Sidebar open state */
     .sidebar.active {
         right: 0;
     }
 
-    /* Remove blank space bug */
-    body.no-scroll {
-        overflow: hidden;
-    }
-
-    /* Sidebar header */
-    .sidebar-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .close-btn {
-        font-size: 28px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #333;
-    }
-
-    /* Sidebar menu list */
-    .sidebar-links {
-        list-style: none;
-        margin-top: 25px;
-        padding: 0;
-    }
-
-    .sidebar-links li {
-        margin: 15px 0;
-    }
-
-    /* LINK STYLE SAME AS NAVBAR */
-    .sidebar-links a {
-        display: block;
-        font-size: 18px;
-        text-decoration: none;
-        color: #000;
-        font-family: 'Segoe UI';
-        padding-bottom: 5px;
-        position: relative;
-    }
-
-    .sidebar-links a:hover {
-        color: #ff0000;
-    }
-
-    /* underline hover effect like navbar */
-    .sidebar-links a::after {
-        content: "";
-        width: 0;
-        height: 2px;
-        background-color: #ff0000;
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        transition: width 0.3s ease;
-    }
-
-    .sidebar-links a:hover::after {
-        width: 50%;
-    }
-
-    /* Dark overlay */
     .overlay {
         display: none;
         position: fixed;
@@ -491,7 +254,13 @@ footer a {
         z-index: 9997;
     }
 
-    .overlay.active {
-        display: block;
-    }
+    .overlay.active { display: block; }
+}
+
+/* ===========================
+   EXTRA SMALL (Under 400px)
+=========================== */
+@media (max-width: 400px) {
+    .pro img { height: 140px; }
+    h2 { font-size: 24px; }
 }
