@@ -56,9 +56,9 @@ a{
         background-image: url(img/bg/mbg2.avif);
 
         /* FIX: Make image fill 100% of screen */
-        background-size: 100% 100%;
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center;
 
         /* Ensures full screen height */
         min-height: 100vh; 
