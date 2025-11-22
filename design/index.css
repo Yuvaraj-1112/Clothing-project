@@ -149,14 +149,9 @@ footer img {
 }
 
 .footer-column a {
-    text-decoration: none;
-    color: #000;
+    color: #1b5be6;
     margin-bottom: 6px;
     transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-    color: #ff0000;
 }
 
 /* FOLLOW US SECTION */
@@ -185,6 +180,10 @@ footer img {
 .footer-copy {
     text-align: center;
     margin-top: 8vh;
+}
+
+footer h3{
+    margin-bottom: 5px;
 }
 
 /* ============================
