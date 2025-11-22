@@ -92,7 +92,7 @@
                     <input type="number" value="1">
                 </div>
             
-                <button>Add To Cart</button>
+                <button id="atc">Add To Cart</button>
                 <h4>Product details:</h4>
                 <span class="prod-dets">
                     This eye-catching blouse features a bold, geometric print in black, white, beige, and red.
@@ -314,7 +314,7 @@
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const addToCartBtn = document.querySelector("button"); // Select Add to Cart button
+            const addToCartBtn = document.getElementById("atc"); // Select Add to Cart button
             const quantityInput = document.querySelector(".quantity input");
             const sizeOptions = document.querySelectorAll("input[name='pro-size']");
     
