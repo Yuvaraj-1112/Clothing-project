@@ -1,46 +1,56 @@
-/* General Styles */
-body {
-    font-family: 'Segoe UI';
+/* ===========================
+   GLOBAL RESET + FONT
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Section */
+body {
+    font-family: 'Segoe UI';
+    overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER & NAVBAR (Desktop)
+=========================== */
 #header {
     background-color: rgb(150, 210, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-    font-family: 'Segoe UI';
+    padding: 10px 15px;
+    
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
-    left: 0;
+    z-index: 2000;
+    margin-bottom: 20px;
 }
 
 #header img {
-    max-height: 50px;
+    height: 40px;
 }
 
-/* Navbar */
+/* Navbar Desktop */
 #navbar {
     list-style: none;
     display: flex;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    gap: 30px;
 }
 
 #navbar li {
-    margin: 0 15px;
     position: relative;
 }
 
 #navbar a {
     text-decoration: none;
-    color: #000000;
-    font-size: 16px;
+    color: #000;
+    font-size: clamp(14px, 2vw, 17px);
     transition: color 0.3s ease;
-    position: relative;
+    padding: 2px 2px;
 }
 
 #navbar a:hover {
@@ -53,9 +63,9 @@ body {
     height: 2px;
     background-color: #ff0000;
     position: absolute;
-    bottom: -4px;
+    bottom: -3px;
     left: 0;
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 #navbar a:hover::after {
@@ -70,16 +80,16 @@ body {
 #navbar .separator {
     width: 1px;
     height: 30px;
-    background-color: #000000;
-    margin: 0 10px;
+    background-color: #000;
 }
 
-/* Category Section */
 
+/* Category Section */
 #category {
     background-color: #f7f4b4;
     margin: 20px 0;
     font-family: 'Segoe UI';
+    padding: 20px 10px;
 }
 
 #category h2 {
@@ -94,9 +104,10 @@ body {
     color: #555;
     margin-bottom: 20px;
     margin-top: 10px;
-    margin-left: 45px;
+    margin-left: 0;
 }
 
+/* Category Cards Wrapper */
 .cat-bg {
     display: flex;
     gap: 20px;
@@ -106,6 +117,7 @@ body {
     padding: 10px;
 }
 
+/* Category Card */
 .cat {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -121,6 +133,7 @@ body {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Category Image */
 .cat img {
     width: 100%;
     height: 130px;
@@ -135,59 +148,67 @@ body {
     font-weight: bold;
 }
 
+/* ============ RESPONSIVE MEDIA QUERIES ============ */
 
-/* Product Section */
-#main-pro{
-    background-color: rgb(197, 255, 236);
-    margin-bottom: 10px;
-    height: 95vh;
+/* Tablets */
+@media (max-width: 1024px) {
+    #category h2 {
+        font-size: 30px;
+    }
+    .cat {
+        width: 140px;
+    }
 }
+
+/* ===========================
+   PRODUCTS SECTION
+=========================== */
+#main-pro {
+    background-color: rgb(197, 255, 236); 
+    padding: 20px, 10px;  
+}
+
 h2 {
     text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 35px;
+    font-size: clamp(26px, 4vw, 35px);
 }
 
 .topic {
-    margin-top: -18px;
     text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 17px;
+    font-size: clamp(14px, 2vw, 18px);
+    margin-top: px;
 }
 
+/* PRODUCTS (Responsive GRID) */
 .pro-bg {
-    display: flex;
-    gap: 20px;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin-left: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 17px;
+    padding: 10px;
 }
+
 .pro {
     background-color: #fff7f7;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
-    max-width: 200px;
-    text-align: left;
-    transition: 0.2s ease;
+    padding: 10px;
+    transition: 0.3s;
 }
 
 .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 12px 12px 20px rgba(0,0,0,0.35);
 }
 
 .pro img {
     width: 100%;
+    height: clamp(150px, 30vh, 200px);
+    object-fit: cover;
     border-radius: 8px;
 }
 
-.des {
-    position: relative;
-}
-
 .des span {
-    font-size: 14px;
     color: #555;
+    font-size: 14px;
 }
 
 .des h5 {
@@ -197,26 +218,333 @@ h2 {
 
 .star {
     color: #f8b400;
-    margin-top: -5px;
 }
 
 .price-cart {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
 }
 
 .price-cart h4 {
     color: #008b3c;
-    font-weight: bold;
-    margin: 0;
-    margin-top: -5px;
 }
 
 .price-cart a {
     color: #fe9292;
-    text-decoration: none;
     font-size: 18px;
-    margin-top: -5px;
 }
+
+/* ===========================
+   LAZY IMAGE FADE-IN
+=========================== */
+.lazy-img {
+    opacity: 0;
+    transition: 0.9s;
+}
+.lazy-img[data-loaded="true"] {
+    opacity: 1;
+}
+
+/* ========================
+      FOOTER MAIN STYLE
+========================= */
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+footer h3{
+    margin-bottom: 5px;
+}
+
+/* FOOTER CONTAINER */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* LEFT CONTENT (LOGO + CONTACT) */
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+footer img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* MIDDLE COLUMNS (ABOUT + POLICY) */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 8vh;
+    margin-left: 200px;
+}
+
+.footer-column a {
+    color: #1b5be6;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+/* FOLLOW US SECTION */
+.footer-social {
+    flex: 1;
+    margin-left: 120px;
+    margin-top: 8vh;
+    text-align: center;
+     margin-bottom: 5px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+#facebook { color: #3b5998; }
+#instagram { color: #E1306C; }
+#x { color: black; }
+#youtube { color: #FF0000; }
+
+/* COPYRIGHT */
+.footer-copy {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+/* ===========================
+   SIDEBAR + HAMBURGER (MOBILE)
+=========================== */
+.hamburger, .sidebar, .overlay {
+    display: none;
+}
+
+
+@media (max-width: 992px) {
+    .footer-column {
+        margin-left: 50px;
+    }
+
+    .footer-social {
+        margin-left: 50px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+     /* Hide Desktop Navbar */
+    #navbar {
+        display: none !important;
+    }
+
+    #category h2 {
+        font-size: 28px;
+    }
+    #category .topic {
+        font-size: 15px;
+    }
+    .cat {
+        width: 45%;
+        padding: 10px;
+    }
+    .cat img {
+        height: 120px;
+    }
+
+    /* Show Hamburger */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 17px;
+        right: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #000;
+        z-index: 9999;
+    }
+
+    /* Sidebar Panel */
+    .sidebar {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 200px;
+        height: 100%;
+        background: rgb(150, 210, 255);
+        padding: 20px;
+        transition: right 0.35s ease;
+        box-shadow: -3px 0 6px rgba(0,0,0,0.3);
+        z-index: 9998;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* Sidebar Close Button + Header */
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .close-btn {
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Sidebar Links */
+    .sidebar-links {
+        list-style: none;
+        margin-top: 25px;
+        padding: 0;
+    }
+
+    .sidebar-links li {
+        margin: 15px 0;
+    }
+
+    .sidebar-links a {
+        display: block;
+        font-size: 18px;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 5px;
+        position: relative;
+        font-family: 'Segoe UI';
+    }
+
+    /* Hover */
+    .sidebar-links a:hover {
+        color: #ff0000;
+    }
+
+    /* Underline Hover Effect */
+    .sidebar-links a::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: #ff0000;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar-links a:hover::after {
+        width: 50%;
+    }
+
+    /* Active Link */
+    .sidebar-links .active a {
+        color: #ff0000;
+        font-weight: bold;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9997;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    /* HIDE Logo & Contact Section */
+    .footer-logo-section {
+        display: none !important;
+    }
+
+    /* KEEP ONLY LINKS + SOCIAL */
+    .footer-column {
+        display: none !important;
+    }
+
+    /* SOCIAL ICON CENTER FIX */
+    .footer-social {
+        margin-left: 0 !important;
+        text-align: center !important;
+        margin-top: -1vh;
+    }
+
+    /* SMALLER SPACING FOR MOBILE */
+    .footer-copy {
+        margin-top: 3vh;
+    }
+
+    /* MAKE A CLEAN GRID LOOK */
+    .footer-container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+    }
+
+    footer a {
+        font-size: 15px;
+    }
+  
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    #category h2 {
+        font-size: 24px;
+    }
+    #category .topic {
+        font-size: 14px;
+    }
+    .cat {
+        width: 80%;
+    }
+    .cat img {
+        height: 110px;
+    }
+    .cat:hover {
+        transform: none; /* disable hover zoom for small phones */
+        box-shadow: none;
+    }
+}
+
+/* ===========================
+   EXTRA SMALL (Under 400px)
+=========================== */
+@media (max-width: 400px) {
+    .pro img { height: 140px; }
+    h2 { font-size: 24px; }
+}
+
+

@@ -96,3 +96,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadCart();
 });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".lazy-img");
+            images.forEach(img => {
+                img.addEventListener("load", () => {
+                    img.setAttribute("data-loaded", "true");
+                });
+            });
+        });
+
+   
+    function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+
+    // Prevent body scroll when sidebar is open
+    document.body.classList.toggle("no-scroll");
+}

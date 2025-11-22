@@ -9,19 +9,44 @@
     </head>
     <body>
 
-        <section id="header">
-            <a href="#"><img src="design/img/logo/logoheader2.png" alt="website-logo"></a>
-            <div>
-              <ul id="navbar">
-                  <li ><a href="homepage.html">Home</a></li>
-                  <li class="active"><a href="shoppage.html">Shop</a></li>
-                  <li ><a href="offerpage.html">Offer</a></li>
-                  <li><a href="cartpage.html"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
-                  <li class="separator"></li>
-                  <li><a href="profile.html"><i class="fas fa-user fa-lg"></i></a></li>
-              </ul>
-            </div>
-          </section>
+        <!-- HEADER -->
+    <section id="header">
+        <a href="#">
+            <img src="design/img/logo/logoheader2.png" alt="website-logo">
+        </a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="homepage.html">Home</a></li>
+                <li class="active"><a href="shoppage.html">Shop</a></li>
+                <li><a href="offerpage.html">Offer</a></li>
+                <li><a href="cartpage.html"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+                <li class="separator"></li>
+                <li><a href="profile.html"><i class="fas fa-user fa-lg"></i></a></li>
+            </ul>
+        </div>
+
+         <div class="hamburger" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </div>
+    </section>
+
+     <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+        <h3>Yuv Clothing</h3>
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+    <ul class="sidebar-links">
+        <li><a href="homepage.html">Home</a></li><hr>
+        <li class="active"><a href="shoppage.html">Shop</a></li><hr>
+        <li><a href="offerpage.html">Offers</a></li><hr>
+        <li><a href="cartpage.html">Cart</a></li><hr>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
         
         <section id="main-pro">
         <section id="product">
@@ -270,55 +295,77 @@
         
 
        
-      <footer style="background-color: #ffffff; padding: 20px;">
-        <hr>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
-            <div style="display: flex; flex-direction: column; text-align: left;">
-                <img class="Logo" src="design/img/logo/logofoot.png" alt="Yuv Clothing Logo" style="width: 150px; height: 150px; ">
-                <div>
-                    <h3>Contact us</h3>
-                    <p><b>Address:</b> No:10, Thillai Nagar 11th cross, Thillai Nagar, Trichy</p>
-                    <p><b>E-mail: </b>yuvclothing@gmail.com</p>
-                    <p><b>Phone:</b> (+91) 63830 48080</p>
-                </div>
-            </div>
-            <div style="display: flex; flex-direction: column; text-align: left; margin-left: 200px; margin-top: 8vh;">
-                <h3>About</h3>
-                <a href="#">About Us</a>   
-                <a href="#">Company Info</a>
-                <a href="#">Carrier</a>
-                <a href="#">Stories</a>                                 
-                <a href="#">Media</a>
-                <a href="#">Corprate Info</a>             
-            </div>
-            <div style="display: flex; flex-direction: column; text-align: left; margin-left: 200px; margin-top: 8vh;">
-                <h3>Customer Policy</h3>
-                <a href="#">Cancellations & Returns</a>   
-                <a href="#">Terms of use</a>
-                <a href="#">Security</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">ERP complainces</a>
-                <a href="#">Terms and Conditions</a>             
-            </div>
-            <div style="flex: 1; margin-left: 120px; margin-top: 8vh; text-align: center;">
-                <h3>Follow us</h3>
-                <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #3b5998;">
-                    <i class="fab fa-facebook fa-2x"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" style="margin: 0 10px; color: #E1306C;">
-                    <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="https://x.com" target="_blank" style="margin: 0 10px; color: black;">
-                    <i class="fab fa-x-twitter fa-2x"></i>
-                </a> 
-                <a href="https://youtube.com" target="_blank" style="margin: 0 10px; color: #FF0000;">
-                    <i class="fab fa-youtube fa-2x"></i>
-                </a>
+      <!-- FOOTER -->
+     <footer>
+    <hr>
+    <div class="footer-container">
+
+        <div class="footer-logo-section">
+            <img src="design/img/logo/logofoot.png" alt="Yuv Clothing Logo">
+            <div>
+                <h3>Contact us</h3>
+                <p><b>Address:</b> No:10, Thillai Nagar 11th cross, Thillai Nagar, Trichy</p>
+                <p><b>E-mail:</b> yuvclothing@gmail.com</p>
+                <p><b>Phone:</b> (+91) 63830 48080</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 8vh;">
-            <p>&copy; 2024 Yuv Clothing. All rights reserved.</p>
+
+        <div class="footer-column">
+            <h3>About</h3>
+            <a href="#">About Us</a>
+            <a href="#">Company Info</a>
+            <a href="#">Carrier</a>
+            <a href="#">Stories</a>
+            <a href="#">Media</a>
+            <a href="#">Corporate Info</a>
         </div>
-    </footer>
+
+        <div class="footer-column">
+            <h3>Customer Policy</h3>
+            <a href="#">Cancellations & Returns</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Security</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">ERP Compliances</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow us</h3>
+            <a href="https://facebook.com" id="facebook"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://instagram.com" id="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://x.com" id="x"><i class="fab fa-x-twitter fa-2x"></i></a>
+            <a href="https://youtube.com" id="youtube"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+
+    </div>
+
+    <div class="footer-copy">
+        <p>&copy; 2024 Yuv Clothing. All rights reserved.</p>
+    </div>
+</footer>
+
+
+     <!-- LAZY LOAD SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".lazy-img");
+            images.forEach(img => {
+                img.addEventListener("load", () => {
+                    img.setAttribute("data-loaded", "true");
+                });
+            });
+        });
+    </script>
+
+    <script>
+    function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+
+    // Prevent body scroll when sidebar is open
+    document.body.classList.toggle("no-scroll");
+}
+</script>
     </body>
 </html>

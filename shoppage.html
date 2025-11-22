@@ -9,19 +9,45 @@
     </head>
     <body>
 
-        <section id="header">
-            <a href="#"><img src="design/img/logo/logoheader2.png" alt="website-logo"></a>
-            <div>
-              <ul id="navbar">
-                  <li ><a href="homepage.html">Home</a></li>
-                  <li class="active"><a href="shoppage.html">Shop</a></li>
-                  <li ><a href="offerpage.html">Offer</a></li>
-                  <li><a href="cartpage.html"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
-                  <li class="separator"></li>
-                  <li><a href="profile.html"><i class="fas fa-user fa-lg"></i></a></li>
-              </ul>
-            </div>
-          </section>
+        <!-- HEADER -->
+    <section id="header">
+        <a href="#">
+            <img src="design/img/logo/logoheader2.png" alt="website-logo">
+        </a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="homepage.html">Home</a></li>
+                <li class="active"><a href="shoppage.html">Shop</a></li>
+                <li><a href="offerpage.html">Offer</a></li>
+                <li><a href="cartpage.html"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+                <li class="separator"></li>
+                <li><a href="profile.html"><i class="fas fa-user fa-lg"></i></a></li>
+            </ul>
+        </div>
+
+         <div class="hamburger" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </div>
+    </section>
+
+     <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+        <h3>Yuv Clothing</h3>
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+    </div>
+
+    <ul class="sidebar-links">
+        <li><a href="homepage.html">Home</a></li><hr>
+        <li class="active"><a href="shoppage.html">Shop</a></li><hr>
+        <li><a href="offerpage.html">Offers</a></li><hr>
+        <li><a href="cartpage.html">Cart</a></li><hr>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
 
           <section id="category">
             <h2>Category</h2>
@@ -70,243 +96,253 @@
         <section id="product">
             <h2>Recently added</h2>
             <div class="pro-bg">
-              <div class="pro">
+
+            <div class="pro" onclick="window.location.href='hs01.html';">
                 <a href="hs.html?image=design/img/product/Shirt/half/hs01.png">
-                  <img src="design/img/product/Shirt/half/hs01.png" alt="hs01 Image">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Shirt/half/hs01.png" alt="hs01 Image">
+                </a>
                 <div class="des">
-                  <span>adidas</span>
-                  <h5>Funky half handed</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹499</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
-                <a href="hs.html?image=design/img/product/Shirt/half/hs04.png">
-                  <img src="design/img/product/Shirt/half/hs04.png" alt="hs04 Image">
-              </a>            
-              
-                <div class="des">
-                  <span>adidas</span>
-                  <h5>Funky half handed</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹499</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
-                <a href="hs.html?image=design/img/product/Shirt/half/hs10.png">
-                  <img src="design/img/product/Shirt/half/hs10.png" alt="hs10 Image">
-              </a>   
-                <div class="des">
-                  <span>adidas</span>
-                  <h5>Funky half handed</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹499</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
-               <a href="ft.html?image=design/img/product/Tshirt/full/ft04.png">
-                  <img src="design/img/product/Tshirt/full/ft04.png" alt="ft02 Image">
-              </a>   
-                <div class="des">
-                  <span>Zara</span>
-                  <h5>Solid sweatshirt</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹799</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
-                 <a href="ft.html?image=design/img/product/Tshirt/full/ft06.png">
-                  <img src="design/img/product/Tshirt/full/ft06.png" alt="ft06 Image">
-              </a>  
-                <div class="des">
-                  <span>Zara</span>
-                  <h5>Solid sweatshirt</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹799</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
-               <a href="ft.html?image=design/img/product/Tshirt/full/ft02.png">
-                <img src="design/img/product/Tshirt/full/ft02.png" alt="ft02 Image">
-            </a> 
-              <div class="des">
-                <span>Zara</span>
-                <h5>Solid sweatshirt</h5>
-                <div class="star">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half"></i>
+                    <span>adidas</span>
+                    <h5>Funky half handed</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹499</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
                 </div>
-                <div class="price-cart">
-                  <h4><b>₹799</b></h4>
-                  <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                </div>
-              </div>   
             </div>
-              <div class="pro">
+
+            <div class="pro">
+                <a href="hs.html?image=design/img/product/Shirt/half/hs04.png">
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Shirt/half/hs04.png" alt="hs04 Image">
+                </a>
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Funky half handed</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹499</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
+                <a href="hs.html?image=design/img/product/Shirt/half/hs10.png">
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Shirt/half/hs10.png" alt="hs10 Image">
+                </a>
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Funky half handed</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹499</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
+                <a href="ft.html?image=design/img/product/Tshirt/full/ft04.png">
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Tshirt/full/ft04.png" alt="ft04 Image">
+                </a>
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Solid sweatshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹799</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
+                <a href="ft.html?image=design/img/product/Tshirt/full/ft06.png">
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Tshirt/full/ft06.png" alt="ft06 Image">
+                </a>
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Solid sweatshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹799</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
+                <a href="ft.html?image=design/img/product/Tshirt/full/ft02.png">
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Tshirt/full/ft02.png" alt="ft02 Image">
+                </a>
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Solid sweatshirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹799</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="cp.html?image=design/img/product/Pant/casual/cp04.png">
-                  <img src="design/img/product/Pant/casual/cp04.png" alt="cp 04">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/casual/cp04.png" alt="cp04">
+                </a>
                 <div class="des">
-                  <span>rigo</span>
-                  <h5>Slim fit casual</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹699</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-  
-              <div class="pro">
+                    <span>rigo</span>
+                    <h5>Slim fit casual</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹699</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="cp.html?image=design/img/product/Pant/casual/cp09.png">
-                  <img src="design/img/product/Pant/casual/cp09.png" alt="">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/casual/cp09.png" alt="">
+                </a>
                 <div class="des">
-                  <span>rigo</span>
-                  <h5>Slim fit casual</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹699</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
+                    <span>rigo</span>
+                    <h5>Slim fit casual</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹699</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="jean.html?image=design/img/product/Pant/jean/jp1.png">
-                  <img src="design/img/product/Pant/jean/jp1.png" alt="">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/jean/jp1.png" alt="">
+                </a>
                 <div class="des">
-                  <span>rigo</span>
-                  <h5>Regular jean</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹799</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
+                    <span>rigo</span>
+                    <h5>Regular jean</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹799</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="jean.html?image=design/img/product/Pant/jean/jp6.png">
-                  <img src="design/img/product/Pant/jean/jp6.png" alt="">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/jean/jp6.png" alt="">
+                </a>
                 <div class="des">
-                  <span>rigo</span>
-                  <h5>Regular jean</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹799</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
+                    <span>rigo</span>
+                    <h5>Regular jean</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹799</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="tp.html?image=design/img/product/Pant/track/tp08.png">
-                  <img src="design/img/product/Pant/track/tp08.png" alt="">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/track/tp08.png" alt="">
+                </a>
                 <div class="des">
-                  <span>adidas</span>
-                  <h5>Sports track pant</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹399</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-              <div class="pro">
+                    <span>adidas</span>
+                    <h5>Sports track pant</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹399</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro">
                 <a href="tp.html?image=design/img/product/Pant/track/tp11.png">
-                  <img src="design/img/product/Pant/track/tp11.png" alt="">
-              </a>
+                    <img loading="lazy" class="lazy-img" src="design/img/product/Pant/track/tp11.png" alt="">
+                </a>
                 <div class="des">
-                  <span>adidas</span>
-                  <h5>Sports track pant</h5>
-                  <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="price-cart">
-                    <h4><b>₹399</b></h4>
-                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                  </div>
-                </div>   
-              </div>
-            </div>  
-        </section>
+                    <span>adidas</span>
+                    <h5>Sports track pant</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="price-cart">
+                        <h4><b>₹399</b></h4>
+                        <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
       </section>
 
         <section id="pagination">
 
         </section>
+
+         <!-- LAZY LOAD SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".lazy-img");
+            images.forEach(img => {
+                img.addEventListener("load", () => {
+                    img.setAttribute("data-loaded", "true");
+                });
+            });
+        });
+    </script>
+
+    <script>
+    function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+
+    // Prevent body scroll when sidebar is open
+    document.body.classList.toggle("no-scroll");
+}
+</script>
+
         
     </body>
 </html>

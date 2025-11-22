@@ -69,5 +69,17 @@
                 window.location.href = "loginpage.html";
             }
         </script>
+
+         <!-- LAZY LOAD SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".lazy-img");
+            images.forEach(img => {
+                img.addEventListener("load", () => {
+                    img.setAttribute("data-loaded", "true");
+                });
+            });
+        });
+    </script>
 </body>
 </html>
