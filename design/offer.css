@@ -83,88 +83,55 @@ body {
     background-color: #000;
 }
 
-/* banner Section */
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .banner h2 {
-    margin-top: -12px;
-    text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 35px;
-  }
-  .banner p{
-    margin-top: -35px;
-    text-align: center;
-    font-family: 'Segoe UI';
-    font-size: 17px;
-}
-  
-  .banner-images {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    width: 100%;
-    max-width: 1300px;
-  }
-  
-  .banner-item img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: auto;
-  }
-  
-  .banner-item img:hover {
-    transform: scale(1.05);
-  }
-
-  #hmb01 {
-    width: 650px;
-    height: 45vh;
-    object-fit: cover;
-    margin-left: -70px;
-  }
-  
-  .banner-item img:nth-child(2) {
-    width: 650px;
-    object-fit: cover;
-    margin-right: 100px;
-  }
-
-  .banner2{
-    display: flex;
+/* OFFER SECTION  */
+.offers-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
     justify-content:center;
-    width: 70%;
-    height: 40vh;
-    margin-left: 200px;
-  }
-  
-  .banner2 img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: auto;
-  }
-  
-  .banner2 img:hover {
-    transform: scale(1.05);
-  }
-  .ban-bg{
-    border-radius: 10px;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
-    margin-top: 40px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 110vh;
-    background-color: rgb(184, 255, 255);
-  }
+    gap:20px;
+    padding:20px;
+}
+
+.offer-card{
+    width:100%;
+    max-width:1200px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    transition:transform .3s ease;
+}
+
+.offer-card:hover{
+    transform:scale(1.02);
+}
+
+.offer-card img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px){
+    .offers-container{
+        padding:10px;
+    }
+    .offer-card{
+        border-radius:0;
+    }
+}
+
+/* ===========================
+   LAZY IMAGE FADE-IN
+=========================== */
+.lazy-img {
+    opacity: 0;
+    transition: 0.9s;
+}
+.lazy-img[data-loaded="true"] {
+    opacity: 1;
+}
 
   
 
