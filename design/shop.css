@@ -20,8 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
-    
+    padding: 10px 15px;    
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
@@ -545,6 +544,11 @@ footer img {
 @media (max-width: 400px) {
     .pro img { height: 140px; }
     h2 { font-size: 24px; }
+
+    .pro-bg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 17px;
+    padding: 10px;
 }
-
-
+}
