@@ -10,6 +10,7 @@
 body {
     font-family: 'Segoe UI';
     overflow-x: hidden;
+    background-color: #fffdf4;
 }
 
 /* ===========================
@@ -21,9 +22,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 2000;
     margin-bottom: 20px;
@@ -83,76 +84,174 @@ body {
     background-color: #000;
 }
 
-/* Profile Container */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    
-    padding: 30px;
-   
-    border-radius: 15px;
-    background-image: url(img/bg/profilebg.jpg);
-   
-   
+.mobilebar{
+    display: none;
+}
+.edit-mobilebar{
+    display: none;
+}
+#mobile-pi{
+    display: none;
 }
 
-/* Profile Card & Edit Profile Card */
-.profile-card, .edit-profile-card {
+
+/* Profile sidebar*/
+.profile-sidebar{
+    position: absolute;
+    top: 100px;              /* same as header height */
+    left: 30px;
+    width: 220px;
+    height: 81vh; 
+    overflow: hidden;       /* 👈 no scroll */
+    font-family: "Segoe UI";
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #efeeb8;
+    border-radius: 8px;
+}
+#pic-name img{
+   width: 130px;
+   height: 130px;
+   margin-bottom: 10px;
+   border: 1.5px #898989 solid ;
+   border-radius: 130px;
+}
+
+#pic-name{
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content inside */
+    align-items: center;
     justify-content: center;
-    background: linear-gradient(   #b8c6fe , #ffa5d8);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.7);
-    width: 350px;
-    max-width: 90%;
-    transition: 0.3s ease-in-out;
+    margin-bottom: 1.2em;
+}
+.profile-sidebar li{
+    font-size: 20px;
+    gap: 20px;
+    padding: 20px;
+    font-weight: 500;
 }
 
-/* Buttons - Increased Size */
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 14px 20px; /* Increased padding for bigger size */
-    font-size: 16px; /* Larger text */
+.profile-sidebar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.profile-sidebar i{
+   margin-right: 10px;
+}
+
+
+.edit-btn {
+    background-color: transparent;
+    color: rgb(17, 0, 255);
+    font-size: 20px; /* Larger text */
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* Logout Button */
 .logout-btn {
-    background-color: red;
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    font-size: 20px; /* Larger text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.logout-btn:hover {
-    background-color: darkred;
-}
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #007BFF;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
+/* dashboard*/
+.dashboard-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    height: auto;
+    left: 270px;
+    top: 85px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #efeeb8;
+    border-radius: 8px;
 }
 
 
+.dashboard, .edit-dashboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-divide{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+
+.dashboard h1{
+    color: #3b5998;
+    padding: 10px;
+    margin: 10px;
+    font-size: 35px;
+}
+
+.edit-dashboard h1{
+    color: #3b5998;
+    padding: 10px;
+    margin: 10px;
+    font-size: 35px;
+}
+
+.dash-box{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.dash-box h2{
+    color: #3b5998;
+}
+
+.dash-box span{
+    margin-top: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 300px;
+    height: auto;
+    border: 2px solid;
+    border-color: #3b5998;
+    border-radius: 5px;
+    color: #333;
+    font-size: 17px;
+}
+
+
+.dash-box input, select{
+    margin-top: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 300px;
+    height: auto;
+    border: 2px solid;
+    border-color: #3b5998;
+    border-radius: 5px;
+    color: #333;
+    font-size: 17px;
+}
+
+#save-btn{
+    position: relative;
+    bottom: 10px;
+    left: -100px;
+    width: 100px;
+    height: 40;
+    padding: 10px;
+    background-color: rgba(9, 173, 9, 0.915);
+    color: #ffffffe8;
+    border-radius: 5px;
+    border-color: transparent;
+}
 
 
 /* ========================
@@ -161,6 +260,9 @@ button:hover {
 footer {
     background-color: #ffffff;
     padding: 20px;
+    padding-top: 0px;
+    position: relative;
+    top: 15vh;
 }
 
 footer hr {
@@ -247,6 +349,48 @@ footer img {
 
 
 @media (max-width: 992px) {
+
+    .dashboard-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    left: 270px;
+    top: 85px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #efeeb8;
+    border-radius: 8px;
+}
+    .dashboard, .edit-dashboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-divide{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.profile-sidebar{
+    position: absolute;
+    top: 100px;              /* same as header height */
+    left: 30px;
+    width: 220px;
+    height: 122vh; 
+    overflow: hidden;       /* 👈 no scroll */
+    font-family: "Segoe UI";
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #efeeb8;
+    border-radius: 8px;
+}
+
+#save-btn{
+    position: relative;
+    left: 80px;   
+}
+
     .footer-column {
         margin-left: 50px;
     }
@@ -263,6 +407,195 @@ footer img {
     #navbar {
         display: none !important;
     }
+
+    .profile-sidebar{
+         display: none ;
+    }
+
+     /* dashboard bar */
+    .mobilebar{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: 100px;
+        gap: 20px;
+        width: auto;
+        height: 140px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    #mobile-pic img{
+        position: relative;
+        top: 20px;
+        left: 20px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+        border-radius: 100px;
+    }
+
+    #edit-mob{
+        background-color: #3b5898e1;
+        position: relative;
+        padding: 7px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: #3b5998;
+        top: 50px;
+        left:30px;
+    }
+
+    #logout-mobile{
+        background-color: #db0049d8;
+        position: relative;
+        padding: 5px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: #E1306C;
+        top: 50px;
+        left:30px;
+    }
+
+    .edit-btn{
+        position: relative;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: #efefef;
+    }
+
+     .logout-btn{
+        position: relative;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: #efefef;
+    }
+
+    .mobile-pro-link button i{
+        margin-right: 8px;
+        margin-left: 5px;
+    }
+
+    .mobile-pro-link button{
+        background-color: transparent;
+        font-size: large;
+        margin-left: 10px;
+    }
+
+    #mobile-edit{
+        border-color: #f3f3f3;
+        background-color:#3b5998;
+        opacity: 0.8;
+    }
+    #mobile-edit a{
+        color: white;
+    }
+    .mobile-edit-link{
+        position: relative;
+        padding: 5px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 5px;
+        top: 50px;
+        left:-100px;
+
+    }
+
+    .mobile-edit-link a i{
+        margin-right: 8px;
+        margin-left: 5px;
+    }
+
+    .mobile-edit-link a{
+        text-decoration: none;
+        font-size: large;
+    }
+
+    /* dashboard*/
+
+    .dashboard-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 130px;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #efeeb8;
+    border-radius: 8px;
+    margin-bottom: 40px;
+
+    }
+
+.dashboard, .edit-dashboard{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+}
+
+.dash-divide{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 30px;
+}
+
+.dashboard h1{
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.edit-dashboard h1{
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+
+.dash-box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dash-box span{
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    width: 200px;
+    height: auto;
+    font-size: 15px;
+}
+
+.dash-box input, select{
+    margin-top: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    width: 220px;
+    height: auto;
+    font-size: 15px;
+}
+
+#save-btn{
+    position: relative;
+    left: 180px; 
+    margin-top: 20px;
+}
 
     /* Show Hamburger */
     .hamburger {
@@ -379,6 +712,7 @@ footer img {
     }
 
     /* HIDE Logo & Contact Section */
+
     .footer-logo-section {
         display: none !important;
     }
@@ -413,13 +747,4 @@ footer img {
     }
   
 }
-
-/* ===========================
-   EXTRA SMALL (Under 400px)
-=========================== */
-@media (max-width: 400px) {
-    .pro img { height: 140px; }
-    h2 { font-size: 24px; }
-}
-
 
