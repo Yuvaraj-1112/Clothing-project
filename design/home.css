@@ -428,19 +428,129 @@ footer img {
   
 }
 
-/* ===========================
-   EXTRA SMALL (Under 400px)
-=========================== */
-@media (max-width: 400px) {
-    .pro img { height: 140px; }
-    h2 { font-size: 24px; }
+/* ---------- small-viewport fixes ---------- */
 
-    .pro-bg {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 17px;
-    padding: 10px;
+@media (max-width: 428px) {
+
+  /* respect safe-area for notched devices */
+  :root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left: env(safe-area-inset-left);
+    --safe-right: env(safe-area-inset-right);
+  }
+
+  /* header: give space for notch and reduce padding */
+  #header {
+    padding: calc(8px + var(--safe-top)) 12px 8px 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  }
+
+  /* logo a bit smaller */
+  #header img { height: 34px; }
+
+  /* make fonts a little smaller but readable */
+  body { font-size: 15px; }
+  #navbar a, .sidebar-links a { font-size: 16px; }
+
+  /* product grid: fewer gaps and slightly smaller cards */
+  .pro-bg {
+    gap: 12px;
+    padding: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .pro {
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .pro img {
+    height: 140px;           /* consistent height on small phones */
+  }
+
+  h2 { font-size: 22px; }
+  .topic { font-size: 14px; margin-top: 6px; }
+
+  /* footer: simplify layout, keep only minimal elements */
+  footer {
+    padding: 12px calc(12px + var(--safe-left)) calc(12px + var(--safe-bottom));
+  }
+
+  /* hide large footer images on phones (you already hide .footer-logo-section but be safe) */
+  .footer-logo-section { display: none !important; }
+
+  /* center social icons, shrink spacing */
+  .footer-social {
+    margin-left: 0 !important;
+    margin-top: 6px !important;
+    text-align: center !important;
+    display: block;
+  }
+  .footer-social a { margin: 0 8px; }
+
+  /* copyright smaller */
+  .footer-copy { margin-top: 2vh; font-size: 13px; }
+
+  /* sidebar: use full height and a little wider on smaller devices */
+  .sidebar {
+    width: calc(80% + var(--safe-right));
+    right: -100%;
+    padding: calc(12px + var(--safe-top)) 14px 18px 14px;
+    border-radius: 0 0 0 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar.active { right: 0; }
+
+  /* overlay should cover safe areas */
+  .overlay.active {
+    display: block;
+    padding-bottom: var(--safe-bottom);
+  }
+
+  /* make hamburger easier to press */
+  .hamburger {
+    top: calc(12px + var(--safe-top));
+    right: calc(10px + var(--safe-right));
+    font-size: 28px;
+    padding: 6px;
+  }
+
+  /* make links touch-friendly */
+  .sidebar-links a, #navbar a {
+    padding: 10px 4px;
+  }
+
+  /* lazy images smaller for speed */
+  .pro img, .lazy-img { max-height: 180px; width: 100%; object-fit: cover; }
+
+  /* prevent unwanted horizontal scrolling */
+  html, body { overflow-x: hidden; }
+
+  /* fix any stray large margins you had in footer columns on small phones */
+  .footer-column { display: none !important; }
+
+  /* Accessibility: increase tap target on price/cart link */
+  .price-cart a {
+    padding: 8px 10px;
+    display: inline-block;
+    border-radius: 6px;
+    text-decoration: none;
+  }
 }
+
+/* extra-target for very small phones (under 360px) */
+@media (max-width: 360px) {
+  .pro img { height: 130px; }
+  h2 { font-size: 20px; }
+  .topic { font-size: 13px; }
+  .hamburger { font-size: 26px; }
 }
+
+/* ---------- minor bug fixes / improvements ---------- */
+/* Fix your #main-pro padding syntax and missing .topic margin value */
+#main-pro { background-color: rgb(197, 255, 236); padding: 20px 10px; }
+.topic { margin-top: 8px; }
+
 
 

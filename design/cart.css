@@ -507,19 +507,4 @@ footer img {
   
 }
 
-/* ===========================
-   EXTRA SMALL (Under 400px)
-=========================== */
-@media (max-width: 400px) {
-    .pro img { height: 140px; }
-    h2 { font-size: 24px; }
-    
-    .pro-bg {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 17px;
-    padding: 10px;
-}
-}
-
 

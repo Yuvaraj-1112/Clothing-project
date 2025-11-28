@@ -527,7 +527,8 @@ footer img {
         font-size: 14px;
     }
     .cat {
-        width: 80%;
+        width: 45%;
+        padding: 10px
     }
     .cat img {
         height: 110px;
